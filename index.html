@@ -103,6 +103,9 @@ h3{color:var(--pink); font-size:1.12rem; margin:0 0 10px; font-weight:700;}
   transition:transform .25s, box-shadow .25s;
 }
 .card:hover{transform:translateY(-3px); box-shadow:0 9px 0 var(--line);}
+.qbox{background:var(--purple-soft); border-radius:16px; padding:12px 16px; margin:0 0 13px; border:2px solid #d9c9ff; position:relative;}
+.qbox .qlabel{display:inline-block; background:var(--purple); color:#fff; font-size:.74rem; font-weight:700; padding:2px 11px; border-radius:11px; margin-bottom:6px;}
+.qbox .opts{margin-top:7px; color:#6c4bb0; font-size:.9rem;}
 .defbox{background:var(--blue-soft); border-radius:16px; padding:11px 15px; margin:11px 0; border:2px solid #cfe6ff;}
 .defbox b{color:#3f7cc4;}
 .keybox{background:var(--yellow-soft); border:2.5px dashed var(--yellow); border-radius:16px; padding:13px 16px; margin:14px 0;}
@@ -190,6 +193,10 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
 
   <section class="card" id="mc1">
     <h3>單選 1 ── 三角函數坐標定義</h3>
+    <div class="qbox"><span class="qlabel">題目</span><br>
+      有向角 \(\theta\) 的頂點為原點 \(O\)，始邊在 \(x\) 軸的正向，點 \(P(k,-6)\) 為終邊上一點。若 \(\cos\theta=-\dfrac{40}{41}\)，則 \(k=?\)
+      <div class="opts">(1) \(-\frac{82}{3}\)　(2) \(-\frac{80}{3}\)　(3) \(-\frac{240}{29}\)　(4) \(\frac{80}{3}\)　(5) \(\frac{82}{3}\)</div>
+    </div>
     <div class="defbox"><b>定義：</b>\(P(x,y)\) 在角 \(\theta\) 終邊上，\(r=\sqrt{x^2+y^2}\)（P 到原點距離，<b>必為正</b>），則 \(\cos\theta=\dfrac{x}{r}\)。</div>
     <p>\(P(k,-6)\)，故 \(r=\sqrt{k^2+36}\)：</p>
     <div class="eq">\[ \cos\theta=\frac{k}{\sqrt{k^2+36}}=-\frac{40}{41} \]</div>
@@ -201,6 +208,10 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
 
   <section class="card" id="mc3">
     <h3>單選 3 ── 面積 = ½ × 底 × 高</h3>
+    <div class="qbox"><span class="qlabel">題目</span><br>
+      在坐標平面上，\(O\) 為原點，有兩點 \(P(5\cos\theta,5\sin\theta)\)、\(A(3,0)\)，下列五個選項中的角度 \(\theta\) 哪一個會讓 \(\triangle OAP\) 面積最大？
+      <div class="opts">(1) \(20^\circ\)　(2) \(30^\circ\)　(3) \(80^\circ\)　(4) \(110^\circ\)　(5) \(140^\circ\)</div>
+    </div>
     <div class="defbox"><b>觀念：</b>\(P(5\cos\theta,5\sin\theta)\) 是半徑 5 圓上的點。底 \(OA=3\) 固定在 \(x\) 軸，<b>高就是 P 的 y 坐標</b> \(=|5\sin\theta|\)。</div>
     <div class="eq">\[ \text{面積}=\frac{1}{2}\cdot 3\cdot 5|\sin\theta|=\frac{15}{2}|\sin\theta| \]</div>
     <p>最大 \(\Leftrightarrow |\sin\theta|\) 最大 \(\Leftrightarrow \theta\) 最接近 \(90^\circ\)。<br>
@@ -210,6 +221,10 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
 
   <section class="card" id="mc4">
     <h3>單選 4 ── 餘弦定理 + 鈍角取號</h3>
+    <div class="qbox"><span class="qlabel">題目</span><br>
+      \(\triangle ABC\) 為鈍角三角形，\(\overline{AB}=4\)、\(\overline{AC}=3\)，其中 \(\angle A\) 為最大角且 \(\sin A=\dfrac{\sqrt{119}}{12}\)，求 \(\overline{BC}^2=?\)
+      <div class="opts">(1) 35　(2) \(\frac{55}{2}\)　(3) 15　(4) \(25+2\sqrt{119}\)　(5) \(25-2\sqrt{119}\)</div>
+    </div>
     <div class="defbox"><b>餘弦定理：</b>\(a^2=b^2+c^2-2bc\cos A\)，\(a\) 是 \(\angle A\) 的<b>對邊</b>。此處 \(BC\) 對 \(\angle A\)，夾邊 \(AB=4,\ AC=3\)。</div>
     <p>由 \(\sin A=\frac{\sqrt{119}}{12}\) 求 \(\cos A\)：</p>
     <div class="eq">\[ \cos^2 A=1-\frac{119}{144}=\frac{25}{144}\Rightarrow\cos A=\pm\frac{5}{12} \]</div>
@@ -222,6 +237,9 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
 
   <section class="card" id="fb1">
     <h3>填充 1 ── 商數關係</h3>
+    <div class="qbox"><span class="qlabel">題目</span><br>
+      已知 \(\theta\) 為銳角，\(5\sin\theta=4\cos\theta\)，則 \(\sin\theta=\) ？
+    </div>
     <div class="defbox"><b>定義：</b>\(\tan\theta=\dfrac{\sin\theta}{\cos\theta}\)（\(\cos\theta\neq0\)）。</div>
     <p>\(\theta\) 銳角，同除 \(\cos\theta\)：\(5\sin\theta=4\cos\theta\Rightarrow\tan\theta=\frac{4}{5}\)<br>
     畫直角三角形：對邊 4、鄰邊 5、斜邊 \(\sqrt{41}\)</p>
@@ -231,6 +249,9 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
 
   <section class="card" id="fb2">
     <h3>填充 2 ── 餘弦定理求角</h3>
+    <div class="qbox"><span class="qlabel">題目</span><br>
+      \(\triangle ABC\) 中，\(\overline{AB}=\sqrt6\)、\(\overline{BC}=2\)、\(\overline{AC}=\sqrt3+1\)，試求 \(\cos A=\) ？
+    </div>
     <div class="defbox"><b>求角版：</b>\(\cos A=\dfrac{b^2+c^2-a^2}{2bc}\)，\(a\) 是 \(\angle A\) 對邊。</div>
     <p>\(\angle A\) 對邊 \(BC=2\)，夾邊 \(AB=\sqrt6,\ AC=\sqrt3+1\)：</p>
     <div class="eq">\[ \cos A=\frac{6+(4+2\sqrt3)-4}{2\sqrt6(\sqrt3+1)}=\frac{6+2\sqrt3}{2\sqrt6(\sqrt3+1)} \]</div>
@@ -241,6 +262,9 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
 
   <section class="card" id="fb3">
     <h3>填充 3 ── 平方關係 + 象限取號</h3>
+    <div class="qbox"><span class="qlabel">題目</span><br>
+      設 \(\theta\) 為第三象限角，且滿足 \(6\cos^2\theta=5-\sin\theta\)，則 \(\cos\theta=\) ？
+    </div>
     <div class="defbox"><b>定義：</b>\(\sin^2\theta+\cos^2\theta=1\)；第三象限 \(\sin\theta<0\) 且 \(\cos\theta<0\)。</div>
     <p>把 \(\cos^2\theta\) 換成 \(1-\sin^2\theta\)：</p>
     <div class="eq">\[ 6(1-\sin^2\theta)=5-\sin\theta\Rightarrow 6\sin^2\theta-\sin\theta-1=0 \]</div>
@@ -252,6 +276,9 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
 
   <section class="card" id="fb5">
     <h3>填充 5 ── 斜率 = tan 傾斜角</h3>
+    <div class="qbox"><span class="qlabel">題目</span><br>
+      設兩直線 \(L_1:x-y=0\) 與 \(L_2:y=ax\) 的銳夾角為 \(15^\circ\)，則 \(a=\) ？（有兩解）
+    </div>
     <div class="defbox"><b>定義：</b>斜率 \(m=\tan(\text{傾斜角})\)，傾斜角為直線與 \(x\) 軸正向夾角（\(0^\circ\sim180^\circ\)）。</div>
     <p>\(L_1: y=x\) 斜率 1 \(\Rightarrow\) 傾斜角 \(45^\circ\)。<br>
     \(L_2\) 與 \(L_1\) 銳夾角 \(15^\circ\Rightarrow\) 傾斜角 \(45^\circ\pm15^\circ=60^\circ\) 或 \(30^\circ\)：</p>
@@ -263,6 +290,9 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
 
   <section class="card" id="fb10">
     <h3>填充 10 ── 仰角 + 畢氏定理</h3>
+    <div class="qbox"><span class="qlabel">題目</span><br>
+      在虛擬遊戲中，有一巨大蘑菇垂直立於地面，其頂端為點 \(C\)、根部為點 \(D\)。玩家小皮在巨大蘑菇的正東方一點 \(A\)，測得頂端的仰角為 \(45^\circ\)；往點 \(A\) 正南方走 24 公尺到達點 \(B\)，從點 \(B\) 測得頂端的仰角為 \(30^\circ\)，則巨大蘑菇的高 \(\overline{CD}=\) ？ 公尺。
+    </div>
     <div class="defbox"><b>定義：</b>仰角是水平線往上看目標的角度；直角三角形中 \(\tan(\text{仰角})=\dfrac{\text{高}}{\text{水平距離}}\)。</div>
     <p>設蘑菇高 \(CD=h\)，\(D\) 根部、\(C\) 頂端。</p>
     <p><b>在 A 處：</b>\(\tan45^\circ=\dfrac{h}{AD}=1\Rightarrow AD=h\)<br>
