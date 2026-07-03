@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三角函數期末衝刺筆記 ♡ 目標 45 分</title>
+<meta name="description" content="中山女高高一下三角函數期末考衝刺筆記，可愛版，戰略性拿 45 分。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+:root{
+  --pink:#ff8fb1; --pink-soft:#ffd6e5; --pink-bg:#fff0f5;
+  --purple:#b892ff; --purple-soft:#e7ddff;
+  --mint:#7fdcc0; --mint-soft:#d4f5ec;
+  --yellow:#ffd670; --yellow-soft:#fff4d6;
+  --blue:#8ec5ff; --blue-soft:#e0f0ff;
+  --ink:#5a4a5e; --ink-soft:#8a7a8e;
+  --card:#ffffff; --line:#ffe0ec;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Noto Sans TC","Baloo 2",sans-serif;
+  color:var(--ink); line-height:1.75; margin:0;
+  background:
+    radial-gradient(circle at 12% 15%, #ffe8f2 0, transparent 42%),
+    radial-gradient(circle at 88% 8%, #ece2ff 0, transparent 40%),
+    radial-gradient(circle at 78% 92%, #d8f7ee 0, transparent 42%),
+    #fff6fb;
+  min-height:100vh; overflow-x:hidden;
+}
+.deco{position:fixed; z-index:0; pointer-events:none; opacity:.55; user-select:none;}
+.deco svg{display:block;}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-26px) rotate(8deg);}}
+@keyframes floaty2{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(22px) rotate(-10deg);}}
+@keyframes spin{from{transform:rotate(0);}to{transform:rotate(360deg);}}
+@keyframes twinkle{0%,100%{opacity:.25; transform:scale(.8);}50%{opacity:.9; transform:scale(1.15);}}
+.f1{top:8%; left:3%; animation:floaty 7s ease-in-out infinite;}
+.f2{top:22%; right:4%; animation:floaty2 8s ease-in-out infinite;}
+.f3{top:55%; left:2%; animation:floaty 9s ease-in-out infinite .5s;}
+.f4{top:72%; right:3%; animation:floaty2 7.5s ease-in-out infinite 1s;}
+.f5{top:40%; right:8%; animation:twinkle 3s ease-in-out infinite;}
+.f6{top:15%; left:40%; animation:twinkle 4s ease-in-out infinite 1s;}
+.f7{bottom:6%; left:12%; animation:floaty 8s ease-in-out infinite .3s;}
+.f8{top:88%; right:14%; animation:spin 22s linear infinite;}
+body.paused .deco{animation-play-state:paused !important;}
+.wrap{max-width:800px; margin:0 auto; padding:0 16px 70px; position:relative; z-index:1;}
+header{
+  text-align:center; padding:38px 18px 30px; margin:18px 0 10px;
+  background:var(--card); border:3px solid var(--pink-soft);
+  border-radius:28px; box-shadow:0 8px 0 var(--pink-soft); position:relative;
+}
+header h1{
+  font-family:"Baloo 2",sans-serif; font-weight:700; margin:0 0 6px;
+  font-size:2rem; color:var(--pink); letter-spacing:1px;
+}
+header h1 .heart{display:inline-block; animation:beat 1.3s ease-in-out infinite; color:var(--purple);}
+@keyframes beat{0%,100%{transform:scale(1);}15%{transform:scale(1.3);}30%{transform:scale(1);}}
+header .sub{color:var(--ink-soft); font-size:.95rem;}
+.crown{position:absolute; top:-26px; left:50%; transform:translateX(-50%); animation:floaty 4s ease-in-out infinite;}
+.controls{
+  display:flex; flex-wrap:wrap; gap:14px; justify-content:center;
+  background:var(--card); border:3px solid var(--purple-soft);
+  border-radius:22px; padding:14px 18px; margin:16px 0 8px;
+  box-shadow:0 6px 0 var(--purple-soft);
+}
+.toggle{display:flex; align-items:center; gap:9px; font-size:.9rem; font-weight:500;}
+.switch{position:relative; width:52px; height:28px; flex-shrink:0;}
+.switch input{opacity:0; width:0; height:0;}
+.slider{position:absolute; inset:0; cursor:pointer; border-radius:28px; background:#e6dced; transition:.3s;}
+.slider:before{content:""; position:absolute; height:22px; width:22px; left:3px; top:3px; background:#fff; border-radius:50%; transition:.3s; box-shadow:0 2px 4px rgba(0,0,0,.15);}
+.switch input:checked + .slider{background:var(--pink);}
+.switch input:checked + .slider:before{transform:translateX(24px);}
+.switch input:focus-visible + .slider{outline:3px solid var(--purple); outline-offset:2px;}
+.toc{
+  background:var(--card); border:3px solid var(--mint-soft); border-radius:22px;
+  padding:14px 20px; margin:16px 0 22px; box-shadow:0 6px 0 var(--mint-soft);
+}
+.toc strong{color:var(--mint); font-family:"Baloo 2",sans-serif;}
+.toc a{
+  display:inline-block; margin:5px 6px 5px 0; padding:4px 13px;
+  background:var(--pink-bg); color:var(--pink); text-decoration:none;
+  border-radius:14px; font-size:.86rem; font-weight:500; transition:.2s; border:2px solid transparent;
+}
+.toc a:hover{background:var(--pink-soft); border-color:var(--pink); transform:translateY(-2px);}
+h2{
+  font-family:"Baloo 2",sans-serif; font-weight:600; color:var(--purple);
+  font-size:1.4rem; margin:30px 0 12px; display:flex; align-items:center; gap:10px;
+}
+h2 .tag{background:var(--purple); color:#fff; font-size:.72rem; font-weight:500; padding:3px 12px; border-radius:14px; font-family:"Noto Sans TC";}
+h3{color:var(--pink); font-size:1.12rem; margin:0 0 10px; font-weight:700;}
+.card{
+  background:var(--card); border:3px solid var(--line); border-radius:22px;
+  padding:20px 24px; margin:16px 0; box-shadow:0 6px 0 var(--line);
+  transition:transform .25s, box-shadow .25s;
+}
+.card:hover{transform:translateY(-3px); box-shadow:0 9px 0 var(--line);}
+.defbox{background:var(--blue-soft); border-radius:16px; padding:11px 15px; margin:11px 0; border:2px solid #cfe6ff;}
+.defbox b{color:#3f7cc4;}
+.keybox{background:var(--yellow-soft); border:2.5px dashed var(--yellow); border-radius:16px; padding:13px 16px; margin:14px 0;}
+.keybox b{color:#c99a1e;}
+.ans{background:var(--pink-soft); border:2px solid var(--pink); border-radius:12px; padding:2px 10px; font-weight:700; color:#b4436a; white-space:nowrap; display:inline-block;}
+.eq{text-align:center; margin:11px 0; overflow-x:auto;}
+.red{color:#e0759b; font-weight:500;}
+.green{color:#4bab8a; font-weight:500;}
+ol,ul{padding-left:24px;} li{margin:5px 0;}
+.combo{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:8px 0;}
+.pill{border-radius:16px; padding:8px 16px; font-weight:700; font-size:.92rem; border:2.5px solid;}
+.pill.p1{background:var(--pink-bg); border-color:var(--pink); color:#b4436a;}
+.pill.p2{background:var(--purple-soft); border-color:var(--purple); color:#6c4bb0;}
+.pill.p3{background:var(--mint-soft); border-color:var(--mint); color:#2e8f72;}
+footer{text-align:center; margin-top:34px; padding:22px; background:var(--card); border:3px solid var(--pink-soft); border-radius:22px; box-shadow:0 6px 0 var(--pink-soft); color:var(--pink); font-family:"Baloo 2",sans-serif; font-weight:600;}
+@media (max-width:600px){
+  header h1{font-size:1.55rem;} h2{font-size:1.2rem;}
+  .card{padding:15px 16px;} .wrap{padding:0 11px 45px;} .deco{opacity:.35;}
+}
+</style>
+</head>
+<body>
+
+<div class="deco f1"><svg width="52" height="52" viewBox="0 0 24 24" fill="#ff8fb1"><path d="M12 21s-7.5-5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3 1.3 3.6 2.3C10.5 6.8 11.5 5.5 13.5 5.5 17 5.5 18.5 9 17.5 12c-2 4-9.5 9-9.5 9z"/></svg></div>
+<div class="deco f2"><svg width="46" height="46" viewBox="0 0 24 24" fill="#b892ff"><path d="M12 2l2.5 6.5L21 9l-5 4.2L17.5 20 12 16.3 6.5 20 8 13.2 3 9l6.5-.5z"/></svg></div>
+<div class="deco f3"><svg width="44" height="44" viewBox="0 0 24 24" fill="#7fdcc0"><path d="M12 21s-7.5-5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3 1.3 3.6 2.3C10.5 6.8 11.5 5.5 13.5 5.5 17 5.5 18.5 9 17.5 12c-2 4-9.5 9-9.5 9z"/></svg></div>
+<div class="deco f4"><svg width="50" height="50" viewBox="0 0 24 24" fill="#ffd670"><path d="M12 2l2.5 6.5L21 9l-5 4.2L17.5 20 12 16.3 6.5 20 8 13.2 3 9l6.5-.5z"/></svg></div>
+<div class="deco f5"><svg width="30" height="30" viewBox="0 0 24 24" fill="#ffb3d0"><circle cx="12" cy="12" r="10"/></svg></div>
+<div class="deco f6"><svg width="26" height="26" viewBox="0 0 24 24" fill="#c9b3ff"><path d="M12 3l1.8 5.2L19 9l-4 3 1.3 5L12 14.5 7.7 17 9 12 5 9l5.2-.8z"/></svg></div>
+<div class="deco f7"><svg width="40" height="40" viewBox="0 0 24 24" fill="#8ec5ff"><path d="M12 21s-7.5-5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3 1.3 3.6 2.3C10.5 6.8 11.5 5.5 13.5 5.5 17 5.5 18.5 9 17.5 12c-2 4-9.5 9-9.5 9z"/></svg></div>
+<div class="deco f8"><svg width="38" height="38" viewBox="0 0 24 24" fill="#ffd670"><path d="M12 1l3 3 4-1-1 4 3 3-3 3 1 4-4-1-3 3-3-3-4 1 1-4-3-3 3-3-1-4 4 1z"/></svg></div>
+
+<div class="wrap">
+  <header>
+    <div class="crown"><svg width="46" height="30" viewBox="0 0 48 32" fill="#ffd670"><path d="M4 28L2 8l11 9L24 4l11 13 11-9-2 20z"/><circle cx="2" cy="6" r="3" fill="#ff8fb1"/><circle cx="46" cy="6" r="3" fill="#ff8fb1"/><circle cx="24" cy="2" r="3" fill="#b892ff"/></svg></div>
+    <h1>三角函數期末衝刺筆記 <span class="heart">♡</span></h1>
+    <div class="sub">目標 45 分作戰包 ｜ 中山女高 114 學年度第二學期</div>
+  </header>
+
+  <div class="controls">
+    <label class="toggle"><span class="switch"><input type="checkbox" id="tgAnim" checked><span class="slider"></span></span>飄動裝飾</label>
+    <label class="toggle"><span class="switch"><input type="checkbox" id="tgAns" checked><span class="slider"></span></span>顯示答案</label>
+    <label class="toggle"><span class="switch"><input type="checkbox" id="tgDark"><span class="slider"></span></span>夜間模式</label>
+  </div>
+
+  <nav class="toc">
+    <strong>♡ 快速跳轉：</strong><br>
+    <a href="#overview">作戰包總覽</a>
+    <a href="#must">必背 7 觀念</a>
+    <a href="#mc1">單選 1</a>
+    <a href="#mc3">單選 3</a>
+    <a href="#mc4">單選 4</a>
+    <a href="#fb1">填充 1</a>
+    <a href="#fb2">填充 2</a>
+    <a href="#fb3">填充 3</a>
+    <a href="#fb5">填充 5</a>
+    <a href="#fb10">填充 10</a>
+  </nav>
+
+  <section class="card" id="overview">
+    <h3>★ 作戰包總覽（共 45 分）</h3>
+    <div class="combo">
+      <span class="pill p1">單選 1·3·4 → 15 分</span>
+      <span class="pill p2">填充 1·2·3·5 → 24 分</span>
+      <span class="pill p3">填充 10 → 6 分</span>
+    </div>
+    <div class="keybox"><b>跳過不寫：</b>填充 6、8、多選 4（CP 值最低，時間不划算）～</div>
+  </section>
+
+  <section class="card" id="must">
+    <h3>★ 必背觀念清單（只有 7 個♪）</h3>
+    <ol>
+      <li>坐標定義：\(r=\sqrt{x^2+y^2}\)（<b>恆正</b>），\(\cos\theta=\frac{x}{r},\ \sin\theta=\frac{y}{r},\ \tan\theta=\frac{y}{x}\)</li>
+      <li>象限正負號（ASTC 口訣）</li>
+      <li>平方關係　\(\sin^2\theta+\cos^2\theta=1\)</li>
+      <li>商數關係　\(\tan\theta=\dfrac{\sin\theta}{\cos\theta}\)</li>
+      <li>餘弦定理　\(a^2=b^2+c^2-2bc\cos A\)（兩種用法）</li>
+      <li>斜率　\(m=\tan(\text{傾斜角})\)</li>
+      <li>仰角三步驟（見填充 10）</li>
+    </ol>
+    <div class="keybox"><b>全卷最大殺招 —— 取正負號！</b>三題單選都靠這個定生死：\(r\) 恆正、鈍角的 \(\cos\) 為負、第三象限 \(\sin\) 與 \(\cos\) 皆負。</div>
+  </section>
+
+  <h2>第一部分：單選題 <span class="tag">15 分</span></h2>
+
+  <section class="card" id="mc1">
+    <h3>單選 1 ── 三角函數坐標定義</h3>
+    <div class="defbox"><b>定義：</b>\(P(x,y)\) 在角 \(\theta\) 終邊上，\(r=\sqrt{x^2+y^2}\)（P 到原點距離，<b>必為正</b>），則 \(\cos\theta=\dfrac{x}{r}\)。</div>
+    <p>\(P(k,-6)\)，故 \(r=\sqrt{k^2+36}\)：</p>
+    <div class="eq">\[ \cos\theta=\frac{k}{\sqrt{k^2+36}}=-\frac{40}{41} \]</div>
+    <p><b>取號：</b>\(r>0\) 而 \(\cos\theta<0\ \Rightarrow\ k\) 必為負。<br>
+    平方交叉相乘：\(1681k^2=1600k^2+57600\Rightarrow 81k^2=57600\Rightarrow k^2=\frac{6400}{9}\)</p>
+    <div class="eq">\( k=\pm\frac{80}{3}\xrightarrow{\text{取負}} \) <span class="ans">\(k=-\frac{80}{3}\)　答案 (2)</span></div>
+    <p class="green">驗算：\(r=\frac{82}{3}\)，\(\cos\theta=-\frac{80}{82}=-\frac{40}{41}\) ✓</p>
+  </section>
+
+  <section class="card" id="mc3">
+    <h3>單選 3 ── 面積 = ½ × 底 × 高</h3>
+    <div class="defbox"><b>觀念：</b>\(P(5\cos\theta,5\sin\theta)\) 是半徑 5 圓上的點。底 \(OA=3\) 固定在 \(x\) 軸，<b>高就是 P 的 y 坐標</b> \(=|5\sin\theta|\)。</div>
+    <div class="eq">\[ \text{面積}=\frac{1}{2}\cdot 3\cdot 5|\sin\theta|=\frac{15}{2}|\sin\theta| \]</div>
+    <p>最大 \(\Leftrightarrow |\sin\theta|\) 最大 \(\Leftrightarrow \theta\) 最接近 \(90^\circ\)。<br>
+    比較：\(80^\circ\) 差 \(10^\circ\)、\(110^\circ\) 差 \(20^\circ\)，其他更遠 \(\Rightarrow\)</p>
+    <div class="eq"><span class="ans">答案 (3)　\(80^\circ\)</span></div>
+  </section>
+
+  <section class="card" id="mc4">
+    <h3>單選 4 ── 餘弦定理 + 鈍角取號</h3>
+    <div class="defbox"><b>餘弦定理：</b>\(a^2=b^2+c^2-2bc\cos A\)，\(a\) 是 \(\angle A\) 的<b>對邊</b>。此處 \(BC\) 對 \(\angle A\)，夾邊 \(AB=4,\ AC=3\)。</div>
+    <p>由 \(\sin A=\frac{\sqrt{119}}{12}\) 求 \(\cos A\)：</p>
+    <div class="eq">\[ \cos^2 A=1-\frac{119}{144}=\frac{25}{144}\Rightarrow\cos A=\pm\frac{5}{12} \]</div>
+    <p><b>取號（陷阱）：</b>\(\angle A\) 是最大角 \(\Rightarrow\) 為鈍角 \(\Rightarrow \cos A=-\frac{5}{12}\)。</p>
+    <div class="eq">\[ \overline{BC}^2=16+9-2\cdot4\cdot3\cdot\left(-\tfrac{5}{12}\right)=25+10 \] <span class="ans">\(=35\)　答案 (1)</span></div>
+    <p class="red">選 (3) 15 的人就是 \(\cos A\) 取成正的喔！</p>
+  </section>
+
+  <h2>第二部分：填充題 <span class="tag">24 分</span></h2>
+
+  <section class="card" id="fb1">
+    <h3>填充 1 ── 商數關係</h3>
+    <div class="defbox"><b>定義：</b>\(\tan\theta=\dfrac{\sin\theta}{\cos\theta}\)（\(\cos\theta\neq0\)）。</div>
+    <p>\(\theta\) 銳角，同除 \(\cos\theta\)：\(5\sin\theta=4\cos\theta\Rightarrow\tan\theta=\frac{4}{5}\)<br>
+    畫直角三角形：對邊 4、鄰邊 5、斜邊 \(\sqrt{41}\)</p>
+    <div class="eq">\[ \sin\theta=\frac{4}{\sqrt{41}} \] <span class="ans">\(=\dfrac{4\sqrt{41}}{41}\)</span></div>
+    <p class="red">規定要有理化分母，寫 \(4/\sqrt{41}\) 會扣分！</p>
+  </section>
+
+  <section class="card" id="fb2">
+    <h3>填充 2 ── 餘弦定理求角</h3>
+    <div class="defbox"><b>求角版：</b>\(\cos A=\dfrac{b^2+c^2-a^2}{2bc}\)，\(a\) 是 \(\angle A\) 對邊。</div>
+    <p>\(\angle A\) 對邊 \(BC=2\)，夾邊 \(AB=\sqrt6,\ AC=\sqrt3+1\)：</p>
+    <div class="eq">\[ \cos A=\frac{6+(4+2\sqrt3)-4}{2\sqrt6(\sqrt3+1)}=\frac{6+2\sqrt3}{2\sqrt6(\sqrt3+1)} \]</div>
+    <p>分子提 \(2\sqrt3\)：\(6+2\sqrt3=2\sqrt3(\sqrt3+1)\)，與分母約掉：</p>
+    <div class="eq">\[ \cos A=\frac{2\sqrt3(\sqrt3+1)}{2\sqrt6(\sqrt3+1)}=\frac{\sqrt3}{\sqrt6}=\frac{1}{\sqrt2} \] <span class="ans">\(=\dfrac{\sqrt2}{2}\)</span></div>
+    <p class="green">（其實 \(A=45^\circ\)。分子能約分表示你走對路♪）</p>
+  </section>
+
+  <section class="card" id="fb3">
+    <h3>填充 3 ── 平方關係 + 象限取號</h3>
+    <div class="defbox"><b>定義：</b>\(\sin^2\theta+\cos^2\theta=1\)；第三象限 \(\sin\theta<0\) 且 \(\cos\theta<0\)。</div>
+    <p>把 \(\cos^2\theta\) 換成 \(1-\sin^2\theta\)：</p>
+    <div class="eq">\[ 6(1-\sin^2\theta)=5-\sin\theta\Rightarrow 6\sin^2\theta-\sin\theta-1=0 \]</div>
+    <p>十字交乘：\((3\sin\theta+1)(2\sin\theta-1)=0\Rightarrow\sin\theta=-\frac{1}{3}\text{ 或 }\frac{1}{2}\)<br>
+    <b>取號：</b>第三象限 \(\sin\theta<0\)，捨去 \(\frac{1}{2}\Rightarrow\sin\theta=-\frac{1}{3}\)</p>
+    <div class="eq">\[ \cos\theta=-\sqrt{1-\tfrac{1}{9}} \] <span class="ans">\(=-\dfrac{2\sqrt2}{3}\)</span></div>
+    <p class="red">兩次取號：先用象限刪解，再讓 \(\cos\) 取負。漏一次全錯！</p>
+  </section>
+
+  <section class="card" id="fb5">
+    <h3>填充 5 ── 斜率 = tan 傾斜角</h3>
+    <div class="defbox"><b>定義：</b>斜率 \(m=\tan(\text{傾斜角})\)，傾斜角為直線與 \(x\) 軸正向夾角（\(0^\circ\sim180^\circ\)）。</div>
+    <p>\(L_1: y=x\) 斜率 1 \(\Rightarrow\) 傾斜角 \(45^\circ\)。<br>
+    \(L_2\) 與 \(L_1\) 銳夾角 \(15^\circ\Rightarrow\) 傾斜角 \(45^\circ\pm15^\circ=60^\circ\) 或 \(30^\circ\)：</p>
+    <div class="eq"><span class="ans">\(a=\tan 60^\circ=\sqrt3\ \text{ 或 }\ a=\tan 30^\circ=\dfrac{\sqrt3}{3}\)</span></div>
+    <p class="red">題目寫「有兩解」就是提示 \(\pm15^\circ\) 兩邊都要寫。</p>
+  </section>
+
+  <h2>第三部分：保險題 <span class="tag">6 分</span></h2>
+
+  <section class="card" id="fb10">
+    <h3>填充 10 ── 仰角 + 畢氏定理</h3>
+    <div class="defbox"><b>定義：</b>仰角是水平線往上看目標的角度；直角三角形中 \(\tan(\text{仰角})=\dfrac{\text{高}}{\text{水平距離}}\)。</div>
+    <p>設蘑菇高 \(CD=h\)，\(D\) 根部、\(C\) 頂端。</p>
+    <p><b>在 A 處：</b>\(\tan45^\circ=\dfrac{h}{AD}=1\Rightarrow AD=h\)<br>
+    <b>在 B 處：</b>\(\tan30^\circ=\dfrac{h}{BD}=\dfrac{1}{\sqrt3}\Rightarrow BD=\sqrt3\,h\)<br>
+    <b>俯視圖（關鍵）：</b>A 在正東 \(\Rightarrow AD\) 東西向；B 在 A 正南 \(\Rightarrow AB\) 南北向。兩者垂直 \(\Rightarrow \angle DAB=90^\circ\)。<br>
+    <b>畢氏定理</b>（\(BD\) 為斜邊）：</p>
+    <div class="eq">\[ (\sqrt3 h)^2=h^2+24^2\Rightarrow 3h^2=h^2+576\Rightarrow h^2=288 \]</div>
+    <div class="eq">\[ h=\sqrt{288} \] <span class="ans">\(=12\sqrt2\) 公尺</span></div>
+    <div class="keybox">
+      <b>方位 + 仰角題固定三步驟：</b>
+      <ol style="margin:6px 0 0;">
+        <li>每個觀測點畫一個直立直角三角形，用 \(\tan\) 把水平距離表示成 \(h\)</li>
+        <li>畫俯視圖，用東西南北找地面三角形的角</li>
+        <li>畢氏定理（直角）或餘弦定理（非直角）解 \(h\)</li>
+      </ol>
+      填充 6、8 也是這套路，行有餘力再挑戰♡
+    </div>
+  </section>
+
+  <footer>♡ 加油！這 45 分只用到 7 個觀念，反覆讀熟就穩了 ♡</footer>
+</div>
+
+<script>
+(function(){
+  var body=document.body;
+  document.getElementById('tgAnim').addEventListener('change',function(e){ body.classList.toggle('paused',!e.target.checked); });
+  document.getElementById('tgAns').addEventListener('change',function(e){
+    document.querySelectorAll('.ans').forEach(function(el){ el.style.visibility=e.target.checked?'visible':'hidden'; });
+  });
+  document.getElementById('tgDark').addEventListener('change',function(e){
+    body.style.filter = e.target.checked ? 'invert(0.92) hue-rotate(180deg)' : '';
+  });
+})();
+</script>
+</body>
+</html>
