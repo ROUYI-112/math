@@ -121,6 +121,19 @@ ol,ul{padding-left:24px;} li{margin:5px 0;}
 .pill.p2{background:var(--purple-soft); border-color:var(--purple); color:#6c4bb0;}
 .pill.p3{background:var(--mint-soft); border-color:var(--mint); color:#2e8f72;}
 footer{text-align:center; margin-top:34px; padding:22px; background:var(--card); border:3px solid var(--pink-soft); border-radius:22px; box-shadow:0 6px 0 var(--pink-soft); color:var(--pink); font-family:"Baloo 2",sans-serif; font-weight:600;}
+#toTop{
+  position:fixed; right:20px; bottom:24px; z-index:99;
+  width:54px; height:54px; border:none; border-radius:50%; cursor:pointer;
+  background:var(--pink); color:#fff; font-size:1.5rem; line-height:1;
+  box-shadow:0 5px 0 #e06a92, 0 6px 14px rgba(255,143,177,.5);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; visibility:hidden; transform:translateY(16px) scale(.8);
+  transition:opacity .3s, transform .3s, visibility .3s;
+}
+#toTop.show{opacity:1; visibility:visible; transform:translateY(0) scale(1); animation:bob 2.2s ease-in-out infinite;}
+#toTop:hover{background:var(--purple); box-shadow:0 5px 0 #9470d8, 0 6px 16px rgba(184,146,255,.55);}
+#toTop:active{transform:translateY(4px) scale(.96); box-shadow:0 1px 0 #e06a92;}
+@keyframes bob{0%,100%{margin-bottom:0;}50%{margin-bottom:6px;}}
 @media (max-width:600px){
   header h1{font-size:1.55rem;} h2{font-size:1.2rem;}
   .card{padding:15px 16px;} .wrap{padding:0 11px 45px;} .deco{opacity:.35;}
@@ -315,6 +328,8 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
   <footer>♡ 加油！這 45 分只用到 7 個觀念，反覆讀熟就穩了 ♡</footer>
 </div>
 
+<button id="toTop" aria-label="回到最上面">︿</button>
+
 <script>
 (function(){
   var body=document.body;
@@ -325,6 +340,11 @@ footer{text-align:center; margin-top:34px; padding:22px; background:var(--card);
   document.getElementById('tgDark').addEventListener('change',function(e){
     body.style.filter = e.target.checked ? 'invert(0.92) hue-rotate(180deg)' : '';
   });
+  var btn=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    btn.classList.toggle('show', window.scrollY>320);
+  });
+  btn.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
 })();
 </script>
 </body>
